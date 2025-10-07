@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Задача 4</title>
+</head>
+<body>
+  <script>
+    function TwoNumbers() {
+      this.a = 0;
+      this.b = 0;
+
+      this.read = function() {
+        const aStr = prompt("Введите первое число:");
+        const bStr = prompt("Введите второе число:");
+        this.a = +aStr;
+        this.b = +bStr;
+      };
+
+      this.sum = function() {
+        return this.a + this.b;
+      };
+
+      this.mul = function() {
+        return this.a * this.b;
+      };
+    }
+
+    const obj = new TwoNumbers();
+    obj.read();
+    console.log("Сумма:", obj.sum());
+    console.log("Произведение:", obj.mul());
+    alert("Сумма: " + obj.sum() + "\nПроизведение: " + obj.mul());
+  </script>
+</body>
+</html>
+

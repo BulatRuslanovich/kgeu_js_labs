@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    let number = Number(prompt("Введите число от -999 до 999:"));
+
+    if (number < -999 || number > 999 || isNaN(number)) {
+        window.open("https://ru.wikipedia.org/wiki/Число", "_blank");
+    } else {
+        let absNumber = Math.abs(number);
+        let digitCount = (absNumber < 10) ? "однозначное" :
+            (absNumber < 100) ? "двузначное" : "трехзначное";
+        let sign = (number >= 0) ? "положительное" : "отрицательное";
+
+        alert(`Число ${digitCount}, ${sign}`);
+    }
+
+
+</script>
+</html>

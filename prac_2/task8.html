@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    let num1 = Number(prompt("Введите первое число:"));
+    let num2 = Number(prompt("Введите второе число:"));
+    let operator = prompt("Введите знак операции (+, -, *, /):");
+
+    if (isNaN(num1) || isNaN(num2)) {
+        window.open("https://ru.wikipedia.org/wiki/Число", "_blank");
+    } else {
+        let result;
+
+        switch (operator) {
+            case "+": result = num1 + num2; break;
+            case "-": result = num1 - num2; break;
+            case "*": result = num1 * num2; break;
+            case "/":
+                if (num2 === 0) {
+                    alert("Делить на ноль пока нельзя, ждем фиксы мира!");
+                    result = "не определено";
+                } else {
+                    result = num1 / num2;
+                }
+                break;
+            default:
+                alert("Такой операции нет у нас на выбор :(!");
+                result = "не определен";
+        }
+
+        if (result !== "не определен" && result !== "не определено") {
+            alert(`${num1} ${operator} ${num2} = ${result}`);
+        }
+    }
+
+</script>
+</html>

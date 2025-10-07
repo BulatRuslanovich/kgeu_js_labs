@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    let a = Number(prompt("Введите длину первой стороны:"));
+    let b = Number(prompt("Введите длину второй стороны:"));
+    let c = Number(prompt("Введите длину третьей стороны:"));
+
+    if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+        window.open("https://ru.wikipedia.org/wiki/Треугольник", "_blank");
+    } else if (a + b > c && a + c > b && b + c > a) {
+        alert("Треугольник существует!");
+    } else {
+        alert("Треугольник не существует!");
+    }
+</script>
+</html>
