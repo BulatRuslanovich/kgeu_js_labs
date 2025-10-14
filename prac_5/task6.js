@@ -16,7 +16,7 @@ function Parallelepiped(width, length, height) {
   };
 }
 
-const box = new Parallelepiped(2, 3, 4);
+const box = new Parallelepiped(10, 15, 20);
 console.log(box.getWidth());  // 2
 console.log(box.getLength()); // 3
 console.log(box.getHeight()); // 4

@@ -3,4 +3,4 @@ function func(num) {
     return (num & (num - 1)) === 0
 }
 
-console.log(func(16));
+console.log(func(17));
