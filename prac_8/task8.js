@@ -7,3 +7,4 @@ function func(year, month) {
 
 console.log(func(2020, 2));
 console.log(func(2020, 12));
+console.log(func(2025, 10));

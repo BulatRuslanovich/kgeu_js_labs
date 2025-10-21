@@ -5,4 +5,4 @@ function func() {
     return Math.floor((endOfDay - now) / 1000);
 }
 
-console.log(func());
+console.log(func() / 3600);

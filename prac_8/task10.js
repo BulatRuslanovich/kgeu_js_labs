@@ -8,5 +8,4 @@ function func(date1Str, date2Str) {
     return diffDays;
 }
 
-console.log(func('01/01/2020', '02/20/2020'));
-console.log(func('01/01/2020', '01/31/2020'));
+console.log(func('10/21/2025', '01/01/2025') / 30);

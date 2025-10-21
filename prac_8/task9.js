@@ -4,7 +4,6 @@ function func(year) {
     return date.getMonth() === 1;
 }
 
-console.log(func(2020)); 
-console.log(func(2021)); 
-console.log(func(2000)); 
-console.log(func(1900));
+console.log(func(2024)); 
+console.log(func(2025));
+console.log(func(2400));
