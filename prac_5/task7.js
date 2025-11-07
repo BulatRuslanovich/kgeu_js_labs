@@ -1,16 +1,18 @@
-function Seller(name, itemsSold) {
-  this.name = name;
-  this.itemsSold = Number(itemsSold) || 0;
+// Конструктор продавца, считающий количество совершённых продаж
+class Seller {
+  constructor(name, itemsSold = 0) {
+    this.name = name;
+    this.itemsSold = Number(itemsSold) || 0;
+  }
 
-  this.sell = function(something) {
+  sell(item) {
     this.itemsSold += 1;
-    return `Менеджер ${this.name} продал ${something}. Теперь у него ${this.itemsSold} продаж.`;
-  };
+    return `Менеджер ${this.name} продал ${item}. Теперь у него ${this.itemsSold} продаж.`;
+  }
 }
 
-const adam = new Seller("Adam", 0);
-
-console.log(adam.sell("телефон"));    
-console.log(adam.sell("наушники"));
-console.log(adam.sell("адаптер"));    
-
+export function runTask() {
+  const adam = new Seller("Adam", 0);
+  const items = ["телефон", "наушники", "адаптер"];
+  return items.map((item) => adam.sell(item));
+}

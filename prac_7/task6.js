@@ -1,24 +1,18 @@
+// Создаёт матрицу заданного размера и заполняет случайными числами
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-n = 5;
-m = 3;
-
-arr = Array.from(Array(n), () => Array.from(Array(m)));
-
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < m; j++) {
-        arr[i][j] = getRandomInt(9);
-    }
+function createMatrix(rows, cols, generator = getRandomInt) {
+  return Array.from({ length: rows }, () =>
+    Array.from({ length: cols }, () => generator(10)),
+  );
 }
-   
 
-console.log(arr);
-
-
-
-
-
-
-
+export function runTask() {
+  const rows = 5;
+  const cols = 3;
+  const matrix = createMatrix(rows, cols);
+  const formatted = matrix.map((row) => row.join(" "));
+  return [`Матрица ${rows}x${cols}:`, ...formatted];
+}

@@ -1,8 +1,15 @@
-function func() {
-    let now = new Date();
-    let startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    
-    return Math.floor((now - startOfDay) / 1000);
+// Считает количество секунд, прошедших с начала текущего дня
+function secondsSinceStartOfDay(date = new Date()) {
+  const startOfDay = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+  );
+  return Math.floor((date - startOfDay) / 1000);
 }
 
-console.log(func() / 3600);
+export function runTask() {
+  const seconds = secondsSinceStartOfDay();
+  const hours = (seconds / 3600).toFixed(2);
+  return [`Секунд с начала дня: ${seconds}`, `Часов с начала дня: ${hours}`];
+}

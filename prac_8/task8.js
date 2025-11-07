@@ -1,10 +1,28 @@
-function func(year, month) {
-    let lastDay = new Date(year, month, 0);
-    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    
-    return days[lastDay.getDay()];
+// Возвращает название дня недели последнего дня заданного месяца
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+function getLastDayOfMonthName(year, month) {
+  const lastDay = new Date(year, month, 0);
+  return days[lastDay.getDay()];
 }
 
-console.log(func(2020, 2));
-console.log(func(2020, 12));
-console.log(func(2025, 10));
+export function runTask() {
+  const samples = [
+    { year: 2020, month: 2 },
+    { year: 2020, month: 12 },
+    { year: 2025, month: 10 },
+  ];
+
+  return samples.map(
+    ({ year, month }) =>
+      `Последний день ${month}.${year}: ${getLastDayOfMonthName(year, month)}`,
+  );
+}

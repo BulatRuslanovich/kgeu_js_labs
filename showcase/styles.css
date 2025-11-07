@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.6;
+}
+
+header {
+  padding: 32px 16px 16px;
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  color: #f0f6fc;
+  text-align: center;
+  border-bottom: 1px solid #21262d;
+}
+
+header h1 {
+  margin: 0 0 12px;
+  font-size: 32px;
+}
+
+header p {
+  margin: 6px auto;
+  max-width: 720px;
+  color: #8b949e;
+}
+
+header .hint {
+  font-size: 14px;
+  color: #8b949e;
+}
+
+.practice-picker {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background-color: rgba(240, 246, 252, 0.05);
+  border-radius: 10px;
+  border: 1px solid #21262d;
+}
+
+.practice-picker label {
+  font-weight: 500;
+  color: #c9d1d9;
+}
+
+#practice-select {
+  appearance: none;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #161b22;
+  color: #c9d1d9;
+}
+
+main {
+  display: grid;
+  gap: 16px;
+  padding: 24px 16px 32px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.empty-state {
+  text-align: center;
+  color: #8b949e;
+  font-size: 15px;
+}
+
+.task {
+  background: #161b22;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid #21262d;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.code-wrapper {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: rgba(22, 27, 34, 0.85);
+  border-bottom: 1px solid #21262d;
+}
+
+pre {
+  margin: 0;
+  padding: 14px;
+  background: transparent;
+  color: #c9d1d9;
+  overflow-x: auto;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.code-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #8b949e;
+}
+
+.task-header h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  color: #f0f6fc;
+}
+
+.run-button {
+  background-color: #238636;
+  color: #f0f6fc;
+  border: 1px solid #2ea043;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.run-button:hover,
+.run-button:focus {
+  transform: translateY(-1px);
+  background-color: #2ea043;
+}
+
+.run-button:active {
+  transform: translateY(0);
+}
+
+details {
+  background: #0d1117;
+  border-radius: 10px;
+  padding: 8px 12px;
+  border: 1px solid #21262d;
+}
+
+details summary {
+  font-weight: 500;
+  cursor: pointer;
+  color: #c9d1d9;
+  font-size: 14px;
+}
+
+.result h3 {
+  margin: 0;
+  color: #c9d1d9;
+  font-size: 14px;
+}
+
+.output {
+  background: #0d1117;
+  color: #c9d1d9;
+  min-height: 56px;
+  border: 1px solid #21262d;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.code-wrapper .hljs {
+  background: transparent;
+  color: #e6edf3;
+}
+
+.code-wrapper .hljs-keyword,
+.code-wrapper .hljs-selector-tag,
+.code-wrapper .hljs-built_in,
+.code-wrapper .hljs-title,
+.code-wrapper .hljs-tag {
+  color: #79c0ff;
+}
+
+.code-wrapper .hljs-number,
+.code-wrapper .hljs-literal,
+.code-wrapper .hljs-attr,
+.code-wrapper .hljs-template-variable {
+  color: #ffa657;
+}
+
+.code-wrapper .hljs-string,
+.code-wrapper .hljs-meta .hljs-string,
+.code-wrapper .hljs-doctag {
+  color: #a5d6ff;
+}
+
+.code-wrapper .hljs-comment,
+.code-wrapper .hljs-quote {
+  color: #8b949e;
+}
+
+.code-wrapper .hljs-function .hljs-title,
+.code-wrapper .hljs-params {
+  color: #d2a8ff;
+}
+
+.code-wrapper .hljs-subst {
+  color: #e6edf3;
+}
+
+.practice-intro a.tasks-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid rgba(88, 166, 255, 0.4);
+  border-radius: 6px;
+  color: #58a6ff;
+  background: rgba(56, 139, 253, 0.12);
+  text-decoration: none;
+  font-size: 14px;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.practice-intro a.tasks-link:hover,
+.practice-intro a.tasks-link:focus {
+  border-color: rgba(88, 166, 255, 0.6);
+  background: rgba(56, 139, 253, 0.2);
+}
+
+.practice-intro a.tasks-link:active {
+  transform: translateY(1px);
+}
+
+.code-block {
+  display: block;
+  white-space: pre;
+}
+
+.line-numbered {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.line-numbers {
+  user-select: none;
+  text-align: right;
+  padding-top: 14px;
+  color: #6e7681;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 26px;
+  }
+
+  .task {
+    padding: 16px;
+  }
+
+  .task-header h2 {
+    font-size: 18px;
+  }
+
+  .run-button {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}

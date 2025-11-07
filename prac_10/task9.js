@@ -1,7 +1,9 @@
+// Форматирует число, добавляя разделители тысяч запятыми
 function formatNumber(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-console.log('formatNumber(1234): ' + formatNumber(1234));
-console.log('formatNumber(12345.67): ' + formatNumber(12345.67));
-console.log('formatNumber(123456): ' + formatNumber(123456));
+export function runTask() {
+  const samples = [1234, 12345.67, 123456, 1234567.89];
+  return samples.map((value) => `${value} -> ${formatNumber(value)}`);
+}

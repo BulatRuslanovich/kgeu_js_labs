@@ -1,11 +1,20 @@
-for (let i = 1; i < 101; i++) {
+// Классическая задача FizzBuzz для чисел до заданного лимита
+function fizzBuzz(limit = 100) {
+  const result = [];
+  for (let i = 1; i <= limit; i += 1) {
     if (i % 15 === 0) {
-        console.log('FizzBuzz');
+      result.push("FizzBuzz");
     } else if (i % 5 === 0) {
-        console.log('Buzz');
+      result.push("Buzz");
     } else if (i % 3 === 0) {
-        console.log('Fizz');
+      result.push("Fizz");
     } else {
-        console.log(i);
+      result.push(String(i));
     }
+  }
+  return result;
+}
+
+export function runTask() {
+  return fizzBuzz(30);
 }

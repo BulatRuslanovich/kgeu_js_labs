@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Демонстрация работ</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Практики и лабы</h1>
+      <p>Выберите раздел и запустите нужные задания.</p>
+
+      <div class="practice-picker">
+        <label for="practice-select">Работа:</label>
+        <select id="practice-select">
+          <option value="">— выбери работу —</option>
+        </select>
+      </div>
+    </header>
+
+    <main id="content">
+      <p class="empty-state">Пока пусто</p>
+    </main>
+
+    <template id="task-template">
+      <section class="task">
+        <div class="task-header">
+          <h2></h2>
+          <button type="button" class="run-button">Запустить</button>
+        </div>
+        <details>
+          <summary>Показать код</summary>
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title"></span>
+            </div>
+            <pre><code class="code-block"></code></pre>
+          </div>
+        </details>
+        <div class="result">
+          <h3>Результат</h3>
+          <pre class="output"></pre>
+        </div>
+      </section>
+    </template>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

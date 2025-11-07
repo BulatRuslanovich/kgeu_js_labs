@@ -1,14 +1,12 @@
-import { GREEN, RESET } from './colors.js';
-
-const str = 'aba aea aca aza axa';
+// Находит подстроки a?a, где ? — буквы из набора [bex]
+const str = "aba aea aca aza axa";
 const rx = /a[bex]a/g;
 
-let coloredStr = str;
-let match;
-while ((match = rx.exec(str)) !== null) {
-    const original = match[0];
-    const colored = `${GREEN}${original}${RESET}`;
-    coloredStr = coloredStr.replace(original, colored);
+function findMatches(input) {
+  return input.match(rx) ?? [];
 }
 
-console.log(coloredStr);
+export function runTask() {
+  const matches = findMatches(str);
+  return [`Строка: ${str}`, `Совпадения: ${matches.join(", ")}`];
+}

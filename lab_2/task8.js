@@ -1,15 +1,16 @@
-function func(arr) {
-    let res = {};
-    
-    for (let ch of arr) {
-        if (res[ch] === undefined) {
-            res[ch] = 1;
-        } else {
-            res[ch] += 1;
-        }
-    }
+// Подсчитывает количество вхождений каждого элемента массива
+function countOccurrences(arr) {
+  const res = {};
 
-    return res;
+  for (const ch of arr) {
+    res[ch] = (res[ch] ?? 0) + 1;
+  }
+
+  return res;
 }
 
-console.log(func(['a', 'a', 'b', 'c', 'c', 'c']));
+export function runTask() {
+  const sample = ["a", "a", "b", "c", "c", "c"];
+  const counts = countOccurrences(sample);
+  return [`${JSON.stringify(sample)} -> ${JSON.stringify(counts)}`];
+}

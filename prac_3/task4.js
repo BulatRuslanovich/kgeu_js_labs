@@ -1,22 +1,32 @@
+// Возводит число в натуральную степень циклом с проверкой параметров
 function power(x, n) {
-    if (n < 1) {
-        return "Параметр n должен быть ≥ 1";
-    }
+  if (n < 1) {
+    return "Параметр n должен быть ≥ 1";
+  }
 
-    let result = 1;
-    let count = 0;
+  let result = 1;
+  let count = 0;
 
-    while (count < n) {
-        result *= x;
-        count++;
-    }
+  while (count < n) {
+    result *= x;
+    count += 1;
+  }
 
-    return result;
+  return result;
 }
 
-console.log(power(2, 3));
-console.log(power(5, 2));
-console.log(power(3, 4));
-console.log(power(10, 1));
-console.log(power(7, 3));
-console.log(power(2, 0));
+export function runTask() {
+  const samples = [
+    [2, 3],
+    [5, 2],
+    [3, 4],
+    [10, 1],
+    [7, 3],
+    [2, 0],
+  ];
+
+  return samples.map(
+    ([base, exponent]) =>
+      `power(${base}, ${exponent}) = ${power(base, exponent)}`,
+  );
+}

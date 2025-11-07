@@ -1,7 +1,11 @@
-function func(str) {
-    const capitalaze = (str) => str[0].toUpperCase() + str.substring(1);
-    
-    return str.split(" ").map(capitalaze).join(" ");
+// Делает первую букву каждого слова заглавной
+function capitalizeWords(str) {
+  const capitalize = (word) =>
+    word ? word[0].toUpperCase() + word.substring(1) : word;
+  return str.split(" ").map(capitalize).join(" ");
 }
 
-console.log(func('hello world how are you'));
+export function runTask() {
+  const sample = "hello world how are you";
+  return [`"${sample}" -> "${capitalizeWords(sample)}"`];
+}

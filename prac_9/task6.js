@@ -1,15 +1,19 @@
-import { GREEN, RED, RESET } from './colors.js';
-
+// Проверяет URL вида http(s)://www.domain.{com|ru}
 const rx = /^https?:\/\/www\.[a-zA-Z0-9.-]+\.(com|ru)$/;
 
 const data = [
-    'https://www.yandex.ru',
-    'http://www.google.com',
-    'https://example.com',
-    'http://www.example.org'
+  "https://www.yandex.ru",
+  "http://www.google.com",
+  "https://example.com",
+  "http://www.example.org",
 ];
 
-data.forEach(url => {
-    console.log(`"${url}": ${rx.test(url) ? `${GREEN}valid${RESET}` : `${RED}invalid${RESET}`}`);
-});
+function validateUrl(url) {
+  return rx.test(url);
+}
 
+export function runTask() {
+  return data.map(
+    (url) => `"${url}": ${validateUrl(url) ? "valid" : "invalid"}`,
+  );
+}

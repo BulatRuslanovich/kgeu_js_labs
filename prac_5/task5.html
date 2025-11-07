@@ -1,30 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Задача 5</title>
-</head>
-<body>
-  <script>
-function Incrementor(firstValue) {
-  this.value = Number(firstValue);
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задача 5</title>
+  </head>
+  <body>
+    <script>
+      function Incrementor(firstValue) {
+        this.value = Number(firstValue);
 
-  this.read = function() {
-    const input = prompt("Введите число для добавления к value:");
-    const num = Number(input);
-    if (!Number.isNaN(num)) {
-      this.value += num;
-    } else {
-      alert("Введено не число; значение не изменено.");
-    }
-  };
-}
+        this.read = function () {
+          const input = prompt("Введите число для добавления к value:");
+          const num = Number(input);
+          if (!Number.isNaN(num)) {
+            this.value += num;
+          } else {
+            alert("Введено не число; значение не изменено.");
+          }
+        };
+      }
 
-const inc = new Incrementor(10);
-inc.read();
-alert(inc.value);
-
-  </script>
-</body>
+      const inc = new Incrementor(10);
+      inc.read();
+      alert(inc.value);
+    </script>
+  </body>
 </html>
-

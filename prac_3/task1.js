@@ -1,25 +1,19 @@
-// var x = 0;
-//
-// function f() {
-//     if (1) {
-//         x = true;
-//     } else {
-//         var x = false;
-//     }
-// }
-//
-// f();
-// console.log(x);
+// Демонстрирует особенности поднятия переменных (hoisting) в JavaScript
+function demonstrateVarHoisting() {
+  let x = 0;
 
-var x = 0;
-
-function f() {
+  function f() {
     if (1) {
-        x = true;
+      x = true;
     } else {
-        x = false;
+      x = false;
     }
+  }
+
+  f();
+  return x;
 }
 
-f();
-console.log(x);
+export function runTask() {
+  return [`Результат выполнения функции f(): ${demonstrateVarHoisting()}`];
+}

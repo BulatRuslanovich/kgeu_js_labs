@@ -1,8 +1,18 @@
-function func(month, year) {
-    return new Date(year, month, 0).getDate();
+// Возвращает количество дней в указанном месяце и году
+function getDaysInMonth(month, year) {
+  return new Date(year, month, 0).getDate();
 }
 
-console.log(func(1, 2012));
-console.log(func(2, 2012));
-console.log(func(2, 2013));
-console.log(func(12, 2012));
+export function runTask() {
+  const samples = [
+    { month: 1, year: 2012 },
+    { month: 2, year: 2012 },
+    { month: 2, year: 2013 },
+    { month: 12, year: 2012 },
+  ];
+
+  return samples.map(
+    ({ month, year }) =>
+      `${month}.${year} -> ${getDaysInMonth(month, year)} дней`,
+  );
+}

@@ -1,16 +1,23 @@
-function func(a, b) {
-    const keysToKeep = new Set(Object.keys(b));
+// Возвращает объект только с теми ключами, что присутствуют в шаблоне
+function keepKeys(source, template) {
+  const keysToKeep = new Set(Object.keys(template));
+  const result = {};
 
-    Object.keys(a).forEach(key => {
-        if (!keysToKeep.has(key)) {
-            delete a[key];
-        }
-    });
+  Object.keys(source).forEach((key) => {
+    if (keysToKeep.has(key)) {
+      result[key] = source[key];
+    }
+  });
 
-    return a;
+  return result;
 }
 
-let a = {'a': 1, 'b': 2, 'c': 3, 'd': 4};
-let b = {'a': 3, 'b': 4};
-console.log(func(a, b)); // {}
-
+export function runTask() {
+  const a = { a: 1, b: 2, c: 3, d: 4 };
+  const b = { a: 3, b: 4 };
+  return [
+    `Исходное: ${JSON.stringify(a)}`,
+    `Оставляем ключи из: ${JSON.stringify(Object.keys(b))}`,
+    `Результат: ${JSON.stringify(keepKeys(a, b))}`,
+  ];
+}

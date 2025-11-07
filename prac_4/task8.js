@@ -1,14 +1,22 @@
-let sal = {
-    Adam: 250,
-    Bob: 350,
-    Cindy: 400,
-    Donald: "Fired",
-}
+// Умножает числовые значения зарплат в объекте на коэффициент
+const salaries = {
+  Adam: 250,
+  Bob: 350,
+  Cindy: 400,
+  Donald: "Fired",
+};
 
-for (let key in sal) {
-    if (typeof sal[key] == "number") {
-        sal[key] = sal[key] * 10;
+function increaseNumericSalaries(data, multiplier = 10) {
+  const updated = { ...data };
+  Object.keys(updated).forEach((key) => {
+    if (typeof updated[key] === "number") {
+      updated[key] *= multiplier;
     }
+  });
+  return updated;
 }
 
-console.log(sal);
+export function runTask() {
+  const updated = increaseNumericSalaries(salaries);
+  return [`Обновлённые данные: ${JSON.stringify(updated)}`];
+}

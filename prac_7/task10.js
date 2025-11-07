@@ -1,22 +1,14 @@
-function func(arr) {
-  var i = 0;
-  var zero_cnt = 0;
-  while (i < arr.length) {
-    if (arr[i] === 0) {
-      arr.splice(i, 1);
-      zero_cnt += 1;
-    } else {
-      ++i;
-    }
-  }
-
-  while (zero_cnt > 0) {
-    arr.push(0);
-    zero_cnt -= 1;
-  }
-
-  return arr;
+// Перемещает все нули массива в конец, сохраняя порядок остальных элементов
+function moveZerosToEnd(values) {
+  const nonZeros = values.filter((value) => value !== 0);
+  const zeroCount = values.length - nonZeros.length;
+  return [...nonZeros, ...Array(zeroCount).fill(0)];
 }
 
-
-console.log(func([false, true, 1, 2, 0, 3, 0, 4, 0, "hello"]));
+export function runTask() {
+  const sample = [false, true, 1, 2, 0, 3, 0, 4, 0, "hello"];
+  return [
+    `Исходный массив: ${JSON.stringify(sample)}`,
+    `Результат: ${JSON.stringify(moveZerosToEnd(sample))}`,
+  ];
+}

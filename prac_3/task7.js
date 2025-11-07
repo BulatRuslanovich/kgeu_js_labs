@@ -1,13 +1,15 @@
-const factorial = (n) =>
-    n < 0 ? "Факториал определен только для неотрицательных чисел" :
-        n === 0 || n === 1 ? 1 :
-            n * factorial(n - 1);
+// Рекурсивно вычисляет факториал с проверкой аргумента
+const factorial = (n) => {
+  if (n < 0) {
+    return "Факториал определен только для неотрицательных чисел";
+  }
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+};
 
-console.log(factorial(0));
-console.log(factorial(1));
-console.log(factorial(2));
-console.log(factorial(3));
-console.log(factorial(4));
-console.log(factorial(5));
-console.log(factorial(6));
-console.log(factorial(-1));
+export function runTask() {
+  const samples = [0, 1, 2, 3, 4, 5, 6, -1];
+  return samples.map((value) => `${value}! = ${factorial(value)}`);
+}

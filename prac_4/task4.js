@@ -1,15 +1,15 @@
-let obj = {
-    a : 1,
-    b : 2,
-    c : 3,
+// Демонстрирует доступ к свойствам через переменные-ключи
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3,
 };
 
+function getProperty(object, key) {
+  return object[key];
+}
 
-let prop = 'b';
-
-console.log(obj[prop]);
-
-let prop2 = 'a';
-
-console.log(obj[prop2]);
-
+export function runTask() {
+  const keys = ["b", "a"];
+  return keys.map((key) => `${key} -> ${getProperty(obj, key)}`);
+}

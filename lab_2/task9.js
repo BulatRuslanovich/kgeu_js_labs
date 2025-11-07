@@ -1,14 +1,11 @@
-function func(arr) {
-    const set = new Set();
-    const res = [];
-
-    for (let i of arr) {
-        set.add(i);
-    }
-
-    set.forEach(e => res.push(e));
-
-    return res;
+// Удаляет дубликаты из массива, сохраняя порядок
+function uniqueValues(arr) {
+  return Array.from(new Set(arr));
 }
 
-console.log(func([1, 1, 1, 2, 2, 5, 5, 8, 8]));
+export function runTask() {
+  const sample = [1, 1, 1, 2, 2, 5, 5, 8, 8];
+  return [
+    `${JSON.stringify(sample)} -> ${JSON.stringify(uniqueValues(sample))}`,
+  ];
+}

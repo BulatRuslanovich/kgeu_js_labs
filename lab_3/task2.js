@@ -1,6 +1,12 @@
-function func(str) {
-  const mt = str.match(/[aeiou]/gi);
-  return mt ? mt.length : 0;
+// Подсчитывает количество гласных букв в строке
+const vowelRegex = /[aeiou]/gi;
+
+function countVowels(str) {
+  const matches = str.match(vowelRegex);
+  return matches ? matches.length : 0;
 }
 
-console.log(func("The Russian Federation"));
+export function runTask() {
+  const sample = "The Russian Federation";
+  return [`"${sample}" -> ${countVowels(sample)}`];
+}

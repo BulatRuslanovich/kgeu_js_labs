@@ -1,9 +1,14 @@
-function func(dateStr) {
-    let date = new Date(dateStr);
-    let day = date.getDay();
-    
-    return day === 0 || day === 6;
+// Определяет, приходится ли дата на выходной день
+function isWeekend(dateStr) {
+  const date = new Date(dateStr);
+  const day = date.getDay();
+  return day === 0 || day === 6;
 }
 
-console.log(func('Oct 17, 2020')); 
-console.log(func('Sep 1, 2020')); 
+export function runTask() {
+  const samples = ["Oct 17, 2020", "Sep 1, 2020", new Date().toDateString()];
+  return samples.map(
+    (sample) =>
+      `${sample} -> ${isWeekend(sample) ? "выходной" : "рабочий день"}`,
+  );
+}

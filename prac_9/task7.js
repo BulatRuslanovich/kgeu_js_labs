@@ -1,18 +1,15 @@
-import { GREEN, RED, RESET } from './colors.js';
-
+// Находит все числа в строке и суммирует их
 const rx = /\d+/g;
 
-const data = [
-    'Hello World! 1 23 JavaScript 456',
-    'No numbers here!'
-];
+const data = ["Hello World! 1 23 JavaScript 456", "No numbers here!"];
 
-data.forEach(str => {
-    const sum = str.match(rx)?.reduce((sum, numStr) => sum + Number(numStr), 0) ?? 0;
+function sumNumbers(str) {
+  return str.match(rx)?.reduce((acc, numStr) => acc + Number(numStr), 0) ?? 0;
+}
 
-    if (sum > 0) {
-        console.log(`"${str}" - ${GREEN}Sum: ${sum}${RESET}`);
-    } else {
-        console.log(`"${str}" - ${RED}No numbers found${RESET}`);
-    }
-});
+export function runTask() {
+  return data.map((str) => {
+    const sum = sumNumbers(str);
+    return sum > 0 ? `"${str}" — сумма чисел: ${sum}` : `"${str}" — чисел нет`;
+  });
+}

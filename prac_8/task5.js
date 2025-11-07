@@ -1,9 +1,15 @@
-function func(date, weeks) {
-    let newDate = new Date(date);
-    newDate.setDate(newDate.getDate() + (weeks * 7));
-    
-    return newDate;
+// Добавляет заданное количество недель к дате
+function addWeeks(date, weeks) {
+  const newDate = new Date(date);
+  newDate.setDate(newDate.getDate() + weeks * 7);
+  return newDate;
 }
 
-console.log(func(new Date('2020-01-01'), 2));
-console.log(func(new Date('2020-01-01'), 4));
+export function runTask() {
+  const base = new Date("2020-01-01");
+  const deltas = [2, 4, 12];
+  return deltas.map(
+    (weeks) =>
+      `${weeks} недель после ${base.toDateString()} -> ${addWeeks(base, weeks).toDateString()}`,
+  );
+}

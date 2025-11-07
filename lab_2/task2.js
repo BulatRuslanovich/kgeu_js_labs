@@ -1,12 +1,16 @@
-function func(str) {
-    let res = "";
-    const isLowercase = (char) => char === char.toLowerCase();
-    
-    for (let ch of str) {
-        res += !isLowercase(ch) ? ch.toLowerCase() : ch.toUpperCase();
-    }
+// Меняет регистр каждой буквы строки на противоположный
+function invertCase(str) {
+  let res = "";
+  const isLowercase = (char) => char === char.toLowerCase();
 
-    return res;
+  for (const ch of str) {
+    res += !isLowercase(ch) ? ch.toLowerCase() : ch.toUpperCase();
+  }
+
+  return res;
 }
 
-console.log(func('HeLlO wOrLd'));
+export function runTask() {
+  const sample = "HeLlO wOrLd";
+  return [`"${sample}" -> "${invertCase(sample)}"`];
+}

@@ -1,27 +1,28 @@
-function my_fn(num) {
-    let res = "";
-    let old_d = -1;
+// Вставляет дефисы между соседними чётными цифрами в числе
+function insertDashesBetweenEvenDigits(num) {
+  let res = "";
+  let oldDigit = -1;
+  let current = num;
 
-    while (num > 0) {
-        let d = num % 10;
-        num = Math.floor(num / 10);
+  while (current > 0) {
+    const digit = current % 10;
+    current = Math.floor(current / 10);
 
-        if (d % 2 === 0 && old_d % 2 === 0) {
-            res = `${d}-${res}`;
-        } else {
-            res = `${d}${res}`;
-        }
-
-
-        old_d = d;
+    if (digit % 2 === 0 && oldDigit % 2 === 0) {
+      res = `${digit}-${res}`;
+    } else {
+      res = `${digit}${res}`;
     }
 
-    return res;
+    oldDigit = digit;
+  }
+
+  return res;
 }
 
-
-console.log(my_fn(827468));
-
-
-
-
+export function runTask() {
+  const samples = [827468, 123456, 86420];
+  return samples.map(
+    (value) => `${value} -> ${insertDashesBetweenEvenDigits(value)}`,
+  );
+}

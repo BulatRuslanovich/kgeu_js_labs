@@ -1,17 +1,17 @@
-function func(str) {
-  const res = str.split(" ");
-  const real_res = [];
-
-  for (let word of res) {
-    if (word.length >= 5) {
-      real_res.push(word.split("").reverse().join(""));
-    } else {
-      real_res.push(word);
-    }
-  }
-
-  return real_res.join(" ");
+// Разворачивает слова длиной ≥ threshold в предложении
+function reverseLongWords(str, threshold = 5) {
+  return str
+    .split(" ")
+    .map((word) =>
+      word.length >= threshold ? word.split("").reverse().join("") : word,
+    )
+    .join(" ");
 }
 
-
-console.log(func("Hello world this is a test"));
+export function runTask() {
+  const sentence = "Hello world this is a test";
+  return [
+    `Исходная строка: "${sentence}"`,
+    `Результат: "${reverseLongWords(sentence)}"`,
+  ];
+}

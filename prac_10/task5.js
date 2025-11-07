@@ -1,4 +1,7 @@
+// Проверяет, лежит ли год в диапазоне 1500-1800 включительно
 const rgx = /^(1[5-7][0-9]{2}|1800)$/;
-console.log('1500: ' + rgx.test('1500'));
-console.log('1800: ' + rgx.test('1800'));
-console.log('1499: ' + rgx.test('1499'));
+
+export function runTask() {
+  const samples = ["1500", "1800", "1499", "1701"];
+  return samples.map((sample) => `${sample}: ${rgx.test(sample)}`);
+}

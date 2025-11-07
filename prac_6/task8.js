@@ -1,16 +1,13 @@
-function func(str) {
-    const _str = str.length % 2 === 0 ? str : str + '_';
-    const res = [];
-
-    res.push(_str.substring(0, _str.length / 2))
-    res.push(_str.substring(_str.length / 2, _str.length))
-    
-    // for (let i = 0; i < _str.length; i += 2) {
-    //     res.push(_str.substring(i, i + 2));
-    // }
-    
-    return res;
+// Разбивает строку на две половины, дополняя символом '_' при нечётной длине
+function splitInHalf(str) {
+  const normalized = str.length % 2 === 0 ? str : `${str}_`;
+  const middle = normalized.length / 2;
+  return [normalized.substring(0, middle), normalized.substring(middle)];
 }
 
-console.log(func('qweac'));
-console.log(func('qweraa'));
+export function runTask() {
+  const samples = ["qweac", "qweraa", "abc"];
+  return samples.map(
+    (value) => `${value} -> ${splitInHalf(value).join(" | ")}`,
+  );
+}

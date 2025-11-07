@@ -1,11 +1,16 @@
-function func(_char, string) {
-    const low = _char.toLowerCase();
-    let cnt = 0;
+// Подсчитывает количество заданного символа в строке без учёта регистра
+function countCharacter(targetChar, str) {
+  const low = targetChar.toLowerCase();
+  let cnt = 0;
 
-    for (let ch of string)
-        if (ch.toLowerCase() === low) cnt++;
+  for (const ch of str) {
+    if (ch.toLowerCase() === low) cnt += 1;
+  }
 
-    return cnt;
+  return cnt;
 }
 
-console.log(func("a", "Amsterdam is the capital of the Netherlands"));
+export function runTask() {
+  const text = "Amsterdam is the capital of the Netherlands";
+  return [`Строка: "${text}"`, `Количество "a": ${countCharacter("a", text)}`];
+}

@@ -1,22 +1,27 @@
-let x = 98;
-let y = 33;
+// Реализует алгоритм Евклида для поиска НОД двух чисел
+function gcd(x, y) {
+  let a = Math.abs(x);
+  let b = Math.abs(y);
 
-let a = x > y ? x : y;
-let b = x > y ? y : x;
+  if (a < b) {
+    [a, b] = [b, a];
+  }
 
-let r = 100;
-
-let q;
-
-while (r > 0) {
-    q = Math.trunc(a / b);
-    r = a % b;
-
+  while (b !== 0) {
+    const r = a % b;
     a = b;
     b = r;
+  }
+
+  return a;
 }
 
-console.log(a);
+export function runTask() {
+  const pairs = [
+    [98, 33],
+    [54, 24],
+    [20, 5],
+  ];
 
-
-
+  return pairs.map(([x, y]) => `gcd(${x}, ${y}) = ${gcd(x, y)}`);
+}

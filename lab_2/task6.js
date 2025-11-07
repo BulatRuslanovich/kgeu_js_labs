@@ -1,22 +1,26 @@
-function func(num) {
-    let len = num.toString().length;
-    let cnt = 0;
+// Считает мультипликативную стойкость числа (количество перемножений цифр)
+function multiplicativePersistence(num) {
+  let current = num;
+  let count = 0;
 
-    while (len > 1) {
-        let mul = 1
+  while (current.toString().length > 1) {
+    let product = 1;
 
-        for (let i of num.toString()) {
-            mul *= Number.parseInt(i);
-        }
-
-        len = mul.toString().length;
-        cnt++;
-        num = mul;
+    for (const digit of current.toString()) {
+      product *= Number.parseInt(digit, 10);
     }
 
-    return cnt;
+    count += 1;
+    current = product;
+  }
+
+  return count;
 }
 
-console.log(`func(39): ${func(39)}`);
-console.log(`func(999): ${func(999)}`);
-console.log(`func(4): ${func(4)}`);
+export function runTask() {
+  const samples = [39, 999, 4];
+  return samples.map(
+    (value) =>
+      `multiplicativePersistence(${value}) = ${multiplicativePersistence(value)}`,
+  );
+}

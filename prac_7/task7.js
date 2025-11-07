@@ -1,21 +1,10 @@
-function squares(num) {
-  let res = [];
-  for (const i of range(num)) {
-    res.push((i + 1) * (i + 1));
-  }
-
-  return res;
-}
-
-console.log(`squares(5): ${squares(5)}`);
-
-
+// Набор вспомогательных функций: range, квадраты, случайные числа, простые
 function range(n, start = 0, step = 1) {
-  let res = [];
+  const res = [];
   let i = start;
 
   while (n > 0) {
-    res.push(i)
+    res.push(i);
     i += step;
     n -= 1;
   }
@@ -23,60 +12,58 @@ function range(n, start = 0, step = 1) {
   return res;
 }
 
-console.log(`range(6, 3, 2): ${range(6, 3, 2)}`);
+function squares(num) {
+  return range(num).map((value) => (value + 1) * (value + 1));
+}
 
-
-function random(n, min = 0, max = 1) {
-  if (max < min) {
-    max, min = min, max;
+function randomIntegers(count, min = 0, max = 1) {
+  let low = min;
+  let high = max;
+  if (high < low) {
+    [low, high] = [high, low];
   }
 
-  let res = [];
-  
-  while (n > 0) {
-    res.push((Math.floor(Math.random() * (max - min + 1)) + min))
-    n -= 1;
+  const res = [];
+  for (let i = 0; i < count; i += 1) {
+    res.push(Math.floor(Math.random() * (high - low + 1)) + low);
   }
 
   return res;
 }
 
-console.log(`random(5, -10, 10): ${random(5, -10, 10)}`);
-
-
 function primes(n) {
-    const isPrime = (num, primes) => {
-      const limit = Math.sqrt(num);
+  const isPrime = (num, knownPrimes) => {
+    const limit = Math.sqrt(num);
 
-      for (const prime of primes) {
-        if (prime > limit) break;
-        if (num % prime === 0) return false;
-      }
-      return true;
+    for (const prime of knownPrimes) {
+      if (prime > limit) break;
+      if (num % prime === 0) return false;
     }
+    return true;
+  };
 
-    const res = [2];
-    let num = 3;
+  if (n <= 0) {
+    return [];
+  }
 
-    while (res.length < n) {
-      if (isPrime(num, res)) {
-        res.push(num);
-      }
-      num += 2;
+  const res = [2];
+  let num = 3;
+
+  while (res.length < n) {
+    if (isPrime(num, res)) {
+      res.push(num);
     }
+    num += 2;
+  }
 
-    return res;
+  return res;
 }
 
-console.log(`primes(6): ${primes(6)}`);
-
-
-
-
-
-
-
-
-
-
-
+export function runTask() {
+  return [
+    `squares(5): [${squares(5).join(", ")}]`,
+    `range(6, 3, 2): [${range(6, 3, 2).join(", ")}]`,
+    `randomIntegers(5, -10, 10): [${randomIntegers(5, -10, 10).join(", ")}]`,
+    `primes(6): [${primes(6).join(", ")}]`,
+  ];
+}

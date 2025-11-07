@@ -1,20 +1,34 @@
-function func(num, arr) {
+// Разбивает число на суммы заданных номиналов жадным алгоритмом
+function greedyDecompose(num, denominations) {
   const res = [];
-  arr = arr.sort().reverse(); 
+  let remaining = num;
+  let values = [...denominations].sort((a, b) => b - a);
 
-  while (num > 0) {
-    let last = arr[0];
+  while (remaining > 0 && values.length > 0) {
+    const current = values[0];
 
-    if (num >= last) {
-      num -= last;
-      res.push(last);
+    if (remaining >= current) {
+      remaining -= current;
+      res.push(current);
     } else {
-      arr = arr.slice(1);
+      values = values.slice(1);
     }
+  }
+
+  if (remaining > 0) {
+    res.push(`Остаток: ${remaining}`);
   }
 
   return res;
 }
 
-
-console.log(func(96, [20, 25, 10, 2, 1]));
+export function runTask() {
+  const denominations = [20, 25, 10, 2, 1];
+  const value = 96;
+  const result = greedyDecompose(value, denominations);
+  return [
+    `Доступные номиналы: [${denominations.join(", ")}]`,
+    `Число: ${value}`,
+    `Результат: ${result.join(", ")}`,
+  ];
+}

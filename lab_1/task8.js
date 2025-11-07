@@ -1,13 +1,16 @@
-let res = 1;
-
-for (let i = 2; i < 11; i++) {
+// Перемножает суммы первых n натуральных чисел для диапазона
+function productOfPartialSums(limit = 10) {
+  let result = 1;
+  for (let i = 2; i <= limit; i += 1) {
     let sum = 0;
-    for (let j = 1; j < i + 1; j++) {
-        sum += j;
+    for (let j = 1; j <= i; j += 1) {
+      sum += j;
     }
-
-    res *= sum;
+    result *= sum;
+  }
+  return result;
 }
 
-console.log(res);
-
+export function runTask() {
+  return [`Произведение = ${productOfPartialSums(10)}`];
+}

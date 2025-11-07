@@ -1,13 +1,14 @@
-let sal = {
-    Adam: 250,
-    Bob: 350,
-    Cindy: 400,
+// Суммирует значения зарплат в объекте сотрудников
+const salaries = {
+  Adam: 250,
+  Bob: 350,
+  Cindy: 400,
+};
+
+function sumSalaries(data) {
+  return Object.values(data).reduce((acc, value) => acc + value, 0);
 }
 
-let sum = 0;
-
-for (let key in sal) {
-    sum += sal[key];
+export function runTask() {
+  return [`Сумма зарплат: ${sumSalaries(salaries)}`];
 }
-
-console.log(sum);

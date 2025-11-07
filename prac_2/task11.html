@@ -1,46 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body></body>
 
-</body>
-
-<script>
+  <script>
     let month = Number(prompt("Введите номер месяца (1-12):"));
 
     if (isNaN(month) || month < 1 || month > 12) {
-        window.open("https://ru.wikipedia.org/wiki/Месяц", "_blank");
+      window.open("https://ru.wikipedia.org/wiki/Месяц", "_blank");
     } else {
-        let season;
+      let season;
 
-        switch (month) {
-            case 12:
-            case 1:
-            case 2:
-                season = "Зима";
-                break;
-            case 3:
-            case 4:
-            case 5:
-                season = "Весна";
-                break;
-            case 6:
-            case 7:
-            case 8:
-                season = "Лето";
-                break;
-            case 9:
-            case 10:
-            case 11:
-                season = "Осень";
-                break;
-        }
+      switch (month) {
+        case 12:
+        case 1:
+        case 2:
+          season = "Зима";
+          break;
+        case 3:
+        case 4:
+        case 5:
+          season = "Весна";
+          break;
+        case 6:
+        case 7:
+        case 8:
+          season = "Лето";
+          break;
+        case 9:
+        case 10:
+        case 11:
+          season = "Осень";
+          break;
+      }
 
-        alert(season);
+      alert(season);
     }
-
-</script>
+  </script>
 </html>

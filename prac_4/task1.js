@@ -1,15 +1,24 @@
+// Демонстрирует основные операции с объектом студента
+function mutateStudent() {
+  const snapshots = [];
+  const student = {};
+  snapshots.push(JSON.stringify(student));
 
-let student = {};
-console.log(student);
+  student.first_name = "Bulat";
+  snapshots.push(JSON.stringify(student));
 
-student.first_name = "Bulat";
-console.log(student);
+  student.last_name = "Bikmukhametov";
+  snapshots.push(JSON.stringify(student));
 
-student.last_name = "Bikmukhametov";
-console.log(student);
+  student.first_name = "Unknown";
+  snapshots.push(JSON.stringify(student));
 
-student.first_name = "Unknown";
-console.log(student);
+  delete student.first_name;
+  snapshots.push(JSON.stringify(student));
 
-delete student.first_name;
-console.log(student);
+  return snapshots;
+}
+
+export function runTask() {
+  return mutateStudent();
+}

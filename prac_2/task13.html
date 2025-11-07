@@ -1,21 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body></body>
 
-</body>
-
-<script>
+  <script>
     let n = Number(prompt("Введите целое положительное число:"));
 
     if (isNaN(n) || n <= 0 || !Number.isInteger(n)) {
-        window.open("https://ru.wikipedia.org/wiki/Число", "_blank");
+      window.open("https://ru.wikipedia.org/wiki/Число", "_blank");
     } else {
-        let sum = n * (n + 1) * (2 * n + 1) / 6;
-        alert(`Сумма квадратов чисел от 1 до ${n} равна ${sum}`);
+      let sum = (n * (n + 1) * (2 * n + 1)) / 6;
+      alert(`Сумма квадратов чисел от 1 до ${n} равна ${sum}`);
     }
-</script>
+  </script>
 </html>

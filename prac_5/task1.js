@@ -1,7 +1,13 @@
-let i = {
-    name: null
+// Создаёт объект человека и позволяет переопределить имя
+const person = {
+  name: "Bulat",
+};
+
+function setName(obj, newName) {
+  return { ...obj, name: newName };
 }
 
-i.name = "Bulat"
-
-console.log(`Меня зовут ${i.name}`)
+export function runTask() {
+  const updated = setName(person, "Bulat");
+  return [`Меня зовут ${updated.name}`];
+}
