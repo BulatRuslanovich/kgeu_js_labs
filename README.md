@@ -18,7 +18,7 @@ cd kgeu_js_labs
 Для Windows с PowerShell:
 
 ```powershell
-https://github.com/BulatRuslanovich/kgeu_js_labs.git
+git clone https://github.com/BulatRuslanovich/kgeu_js_labs.git
 cd kgeu_js_labs
 ```
 
