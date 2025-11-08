@@ -6,56 +6,73 @@
 
 Лабы по JavaScript в КГЭУ.
 
-### Зависимости
+## Запуск
 
-Понадобится Node.js и утилита `serve`.
+### 1. Клонируй репозиторий
 
-- **Arch / Manjaro**
-  ```bash
-  sudo pacman -S nodejs npm
-  npm install --global serve
+```bash
+git clone https://github.com/BulatRuslanovich/kgeu_js_labs.git
+cd kgeu_js_labs
+```
+
+Для Windows с PowerShell:
+
+```powershell
+https://github.com/BulatRuslanovich/kgeu_js_labs.git
+cd kgeu_js_labs
+```
+
+### 2. Установи Node.js и утилиту `serve`
+
+- **Windows (если нет Chocolatey):** открой PowerShell **от имени администратора** и выполни
+
+  ```powershell
+  Set-ExecutionPolicy Bypass -Scope Process -Force
+  [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+  iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
   ```
-- **Ubuntu / Debian**
+
+  Затем поставь Node.js LTS и `serve`:
+
+  ```powershell
+  choco install nodejs-lts -y
+  npm.cmd install --global serve
+  ```
+
+- **Linux / macOS:** поставь Node.js и `serve` любым удобным способом (пример для Debian/Ubuntu):
+
   ```bash
   sudo apt update
   sudo apt install nodejs npm
   sudo npm install --global serve
   ```
-- **Fedora**
-  ```bash
-  sudo dnf install nodejs npm
-  sudo npm install --global serve
-  ```
-- **Windows (Chocolatey)**
-  ```powershell
-  choco install nodejs-lts -y
-  npm install --global serve
-  ```
 
-## Запуск
+### 3. Сгенерируй конфиги работ
 
-1. Собери конфиг работ:
+```bash
+node scripts/generate-work-configs.mjs
+```
 
-   ```bash
-   node scripts/generate-work-configs.mjs
-   ```
+PowerShell:
 
-   для Windows
-   
-    ```powershell
-    node.exe .\scripts\generate-work-configs.mjs
-    ```
+```powershell
+node.exe .\scripts\generate-work-configs.mjs
+```
 
-2. Запусти статический сервер из корня проекта:
+### 4. Запусти статический сервер
 
-   ```bash
-   npx serve .
-   ```
+```bash
+npx serve .
+```
 
-    для Windows
-   
-    ```powershell
-    npx.cmd serve .
-    ```
+PowerShell:
 
-3. Открой `http://localhost:3000/showcase/index.html` и выбери нужную работу.
+```powershell
+npx.cmd serve .
+```
+
+Если порт занят, добавь `-l 4000` (или любой другой свободный).
+
+### 5. Открой витрину
+
+Перейди в браузере по адресу `http://localhost:3000/showcase/index.html` (порт может отличаться, если указал другой на предыдущем шаге) и выбери нужную работу.
