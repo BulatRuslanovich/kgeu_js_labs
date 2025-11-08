@@ -2,7 +2,7 @@
 
 import fs from "fs/promises";
 import path from "path";
-import { fileURLToPath, pathToFileURL } from "url";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,9 +10,54 @@ const repoRoot = path.resolve(__dirname, "..");
 const showcaseDir = path.join(repoRoot, "showcase");
 const generatedFile = path.join(showcaseDir, "workConfigs.generated.js");
 
-const worksModuleUrl = path.join(showcaseDir, "works.js");
-const worksModule = await import(pathToFileURL(worksModuleUrl));
-const works = worksModule.default ?? worksModule;
+const dirEntries = await fs.readdir(repoRoot, { withFileTypes: true });
+
+const workDirs = dirEntries
+  .filter(
+    (entry) =>
+      entry.isDirectory() && /^(?:lab|prac)_\d+$/i.test(entry.name ?? ""),
+  )
+  .map((entry) => entry.name)
+  .sort((a, b) => {
+    const typeOrder = (name) =>
+      name.startsWith("lab_")
+        ? 0
+        : name.startsWith("prac_")
+        ? 1
+        : 2;
+    const typeDiff = typeOrder(a) - typeOrder(b);
+    if (typeDiff !== 0) return typeDiff;
+
+    const numA = Number(a.match(/\d+/)?.[0] ?? 0);
+    const numB = Number(b.match(/\d+/)?.[0] ?? 0);
+    if (numA !== numB) return numA - numB;
+
+    return a.localeCompare(b);
+  });
+
+const buildTitle = (name) => {
+  const match = name.match(/^(lab|prac)_(\d+)$/i);
+  if (!match) return name;
+
+  const [, kindRaw, numberRaw] = match;
+  const number = Number(numberRaw);
+
+  if (kindRaw.toLowerCase() === "lab") {
+    return `Лаба ${number}`;
+  }
+
+  if (kindRaw.toLowerCase() === "prac") {
+    return `Практика ${number}`;
+  }
+
+  return name;
+};
+
+const works = workDirs.map((directory) => ({
+  id: directory,
+  directory,
+  title: buildTitle(directory),
+}));
 
 const extractFirstComment = (content) => {
   const lines = content.split(/\r?\n/);
@@ -68,12 +113,6 @@ configLines.push("");
 configLines.push("const workConfigs = {");
 
 for (const work of works) {
-  if (!work.directory) {
-    throw new Error(
-      `Work "${work.id}" is missing the "directory" property in works.js.`,
-    );
-  }
-
   const workDir = path.resolve(repoRoot, work.directory);
 
   const entries = await fs.readdir(workDir);
@@ -99,10 +138,12 @@ for (const work of works) {
   configLines.push(`  '${work.id}': {`);
   configLines.push(`    id: '${work.id}',`);
   configLines.push(`    title: ${stringify(work.title)},`);
-  configLines.push(`    description: ${stringify(work.description ?? "-")},`);
+  configLines.push(`    directory: ${stringify(work.directory)},`);
+
   if (hasPdf) {
-    configLines.push("    tasksPdf: 'tasks.pdf',");
+    configLines.push("    tasksPdf: true,");
   }
+
   configLines.push("    tasks: [");
 
   for (const task of tasks) {

@@ -4,9 +4,9 @@
 const workConfigs = {
   'lab_1': {
     id: 'lab_1',
-    title: "Лабораторная работа 1 — Базовые циклы и условия",
-    description: "Набор заданий на практику циклов, условий и простых числовых алгоритмов.",
-    tasksPdf: 'tasks.pdf',
+    title: "Лаба 1",
+    directory: "lab_1",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',
@@ -52,9 +52,9 @@ const workConfigs = {
   },
   'lab_2': {
     id: 'lab_2',
-    title: "Лабораторная работа 2 — Массивы и строки",
-    description: "Практика обработки массивов, строк и базовых алгоритмов.",
-    tasksPdf: 'tasks.pdf',
+    title: "Лаба 2",
+    directory: "lab_2",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',
@@ -105,9 +105,9 @@ const workConfigs = {
   },
   'lab_3': {
     id: 'lab_3',
-    title: "Лабораторная работа 3 — Регулярные выражения и даты",
-    description: "Практика использования регулярных выражений и работы с датами.",
-    tasksPdf: 'tasks.pdf',
+    title: "Лаба 3",
+    directory: "lab_3",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',
@@ -141,11 +141,32 @@ const workConfigs = {
       },
     ],
   },
+  'prac_1': {
+    id: 'prac_1',
+    title: "Практика 1",
+    directory: "prac_1",
+    tasksPdf: true,
+    tasks: [
+    ],
+  },
+  'prac_2': {
+    id: 'prac_2',
+    title: "Практика 2",
+    directory: "prac_2",
+    tasksPdf: true,
+    tasks: [
+      {
+        id: 'task14',
+        title: "-",
+        file: 'task14.js',
+      },
+    ],
+  },
   'prac_3': {
     id: 'prac_3',
-    title: "Практика 3 — Функции и условия",
-    description: "Упражнения для закрепления условных операторов, циклов и функций.",
-    tasksPdf: 'tasks.pdf',
+    title: "Практика 3",
+    directory: "prac_3",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',
@@ -196,9 +217,9 @@ const workConfigs = {
   },
   'prac_4': {
     id: 'prac_4',
-    title: "Практика 4 — Основы объектов",
-    description: "Набор упражнений по созданию, изменению и проверке объектов.",
-    tasksPdf: 'tasks.pdf',
+    title: "Практика 4",
+    directory: "prac_4",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',
@@ -259,9 +280,9 @@ const workConfigs = {
   },
   'prac_5': {
     id: 'prac_5',
-    title: "Практика 5 — Объекты и конструкторы",
-    description: "Задачи по работе с объектами, методами и прототипами в JavaScript.",
-    tasksPdf: 'tasks.pdf',
+    title: "Практика 5",
+    directory: "prac_5",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',
@@ -302,9 +323,9 @@ const workConfigs = {
   },
   'prac_6': {
     id: 'prac_6',
-    title: "Практика 6 — Строки и числа",
-    description: "Задачи на работу со строками, числами и простыми циклами.",
-    tasksPdf: 'tasks.pdf',
+    title: "Практика 6",
+    directory: "prac_6",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',
@@ -350,9 +371,9 @@ const workConfigs = {
   },
   'prac_7': {
     id: 'prac_7',
-    title: "Практика 7 — Работа с массивами и циклами",
-    description: "Подборка упражнений по манипулированию массивами, генерации последовательностей и алгоритмам.",
-    tasksPdf: 'tasks.pdf',
+    title: "Практика 7",
+    directory: "prac_7",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',
@@ -408,9 +429,9 @@ const workConfigs = {
   },
   'prac_8': {
     id: 'prac_8',
-    title: "Практика 8 — Работа с датами",
-    description: "Коллекция задач на использование объекта Date и вычисления с датами.",
-    tasksPdf: 'tasks.pdf',
+    title: "Практика 8",
+    directory: "prac_8",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',
@@ -466,9 +487,9 @@ const workConfigs = {
   },
   'prac_9': {
     id: 'prac_9',
-    title: "Практика 9 — Регулярные выражения (часть 1)",
-    description: "Задания на поиск и обработку строк с использованием регулярных выражений.",
-    tasksPdf: 'tasks.pdf',
+    title: "Практика 9",
+    directory: "prac_9",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',
@@ -514,9 +535,9 @@ const workConfigs = {
   },
   'prac_10': {
     id: 'prac_10',
-    title: "Практика 10 — Регулярные выражения и строки",
-    description: "Набор задач на работу с регулярными выражениями и обработку строк.",
-    tasksPdf: 'tasks.pdf',
+    title: "Практика 10",
+    directory: "prac_10",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',
@@ -567,9 +588,9 @@ const workConfigs = {
   },
   'prac_11': {
     id: 'prac_11',
-    title: "Практика 11 — Замыкания",
-    description: "Набор заданий по работе с функциями высшего порядка и замыканиями.",
-    tasksPdf: 'tasks.pdf',
+    title: "Практика 11",
+    directory: "prac_11",
+    tasksPdf: true,
     tasks: [
       {
         id: 'task1',

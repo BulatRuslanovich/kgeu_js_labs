@@ -26,6 +26,11 @@
   sudo dnf install nodejs npm
   sudo npm install --global serve
   ```
+- **Windows (Chocolatey)**
+  ```powershell
+  choco install nodejs-lts -y
+  npm install --global serve
+  ```
 
 ## Запуск
 
@@ -35,10 +40,22 @@
    node scripts/generate-work-configs.mjs
    ```
 
+   для Windows
+   
+    ```powershell
+    node.exe .\scripts\generate-work-configs.mjs
+    ```
+
 2. Запусти статический сервер из корня проекта:
 
    ```bash
    npx serve .
    ```
+
+    для Windows
+   
+    ```powershell
+    npx.cmd serve .
+    ```
 
 3. Открой `http://localhost:3000/showcase/index.html` и выбери нужную работу.
