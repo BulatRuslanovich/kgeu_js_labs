@@ -2,6 +2,9 @@
 const str = "Hello        World            Javascript";
 
 function normalizeWhitespace(input) {
+  // /\s+/g:
+  //   \s+  — одна или более любых пробельных символов (пробел, таб, перенос);
+  //   g    — заменяем все группы пробелов в строке.
   return input.replace(/\s+/g, " ");
 }
 
