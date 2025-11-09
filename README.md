@@ -4,9 +4,15 @@
 >
 > _— Эрих Мария Ремарк_
 
-Лабы по JavaScript в КГЭУ.
+Учебные лабораторные и практические работы по JavaScript в КГЭУ.
 
-## Запуск
+## Структура
+
+- `assignments/` — все лабораторные и практические работы, сгруппированные по папкам `lab_*` и `prac_*`.
+- `showcase/` — витрина для просмотра и запуска решений (HTML/CSS/JS + служебные скрипты).
+- `README.md` — общий обзор репозитория и инструкции.
+
+## Showcase
 
 ### 1. Клонируй репозиторий
 
@@ -48,14 +54,16 @@ cd kgeu_js_labs
 ### 3. Сгенерируй конфиги работ
 
 ```bash
-node scripts/generate-work-configs.mjs
+node showcase/scripts/generate-work-configs.mjs
 ```
 
 PowerShell:
 
 ```powershell
-node.exe .\scripts\generate-work-configs.mjs
+node.exe .\showcase\scripts\generate-work-configs.mjs
 ```
+
+После добавления новых заданий в `assignments` повторяй генерацию.
 
 ### 4. Запусти статический сервер
 
