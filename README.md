@@ -4,81 +4,88 @@
 >
 > _— Эрих Мария Ремарк_
 
-Учебные лабораторные и практические работы по JavaScript в КГЭУ.
+Учебные лабораторные и практические работы по JavaScript (КГЭУ). Репозиторий оформлен как монохранилище: шаблон витрины, автоматическая генерация конфигураций и сами задания.
 
-## Структура
+## Архитектура репозитория
 
-- `assignments/` — все лабораторные и практические работы, сгруппированные по папкам `lab_*` и `prac_*`.
-- `showcase/` — витрина для просмотра и запуска решений (HTML/CSS/JS + служебные скрипты).
-- `README.md` — общий обзор репозитория и инструкции.
+- `assignments/` — каталоги лабораторных (`lab_X`) и практик (`prac_Y`), внутри — задания `taskN.js` и опциональный `tasks.pdf`.
+- `showcase/` — SPA на Vue 3 для просмотра кода и запуска решений.
+- `showcase/scripts/generate-work-configs.mjs` — генератор конфигурации витрины.
+- `showcase/workConfigs.generated.js` — результирующий конфиг (машинная генерация, руками не править).
+- `package.json` — точка входа npm-скриптов, ESLint/Prettier/Vite.
+- `README.md` — рабочая инструкция и требования к задачам.
+
+## Регламент разработки
+
+```bash
+npm install
+npm run lint
+npm run lint:fix
+npm run format
+npm run format:check
+```
+
+> Примечание: ESLint и Prettier игнорируют `showcase/workConfigs.generated.js`, `showcase/dist`, PDF и HTML внутри `assignments`.
 
 ## Showcase
 
-### 1. Клонируй репозиторий
+Витрина построена на Vue 3 (Composition API) + Vite. Приложение запускается из каталога `showcase`, но все команды выполняем из корня репозитория.
 
-```bash
-git clone https://github.com/BulatRuslanovich/kgeu_js_labs.git
-cd kgeu_js_labs
-```
+### Быстрый старт
 
-Для Windows с PowerShell:
+1. **Клонирование**
+   ```bash
+   git clone https://github.com/BulatRuslanovich/kgeu_js_labs.git
+   cd kgeu_js_labs
+   ```
+2. **Node.js**
+   - Windows (без Chocolatey):
+     ```powershell
+     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+     choco install nodejs-lts -y
+     ```
+   - Linux/macOS:
+     ```bash
+     sudo apt update
+     sudo apt install nodejs npm
+     ```
+3. **Генерация конфигурации**
+   ```bash
+   node showcase/scripts/generate-work-configs.mjs
+   ```
+   > После любого изменения в `assignments/` скрипт нужно запускать повторно.
+4. **Dev-сервер**
+   ```bash
+   npm run dev
+   # пример с кастомным портом/хостом:
+   npm run dev -- --host --port 4000
+   ```
+5. **Доступ**
+   Открыть `http://localhost:5173/` (порт зависит от параметров `vite dev`).
+6. **Production-сборка**
+   ```bash
+   npm run build    # output -> showcase/dist
+   npm run preview  # локальный просмотр production-сборки
+   ```
 
-```powershell
-git clone https://github.com/BulatRuslanovich/kgeu_js_labs.git
-cd kgeu_js_labs
-```
+## Требования к новым работам
 
-### 2. Установи Node.js и утилиту `serve`
-
-- **Windows (если нет Chocolatey):** открой PowerShell **от имени администратора** и выполни
-
-  ```powershell
-  Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+- **Именование**: каталог `lab_X` или `prac_Y` (X/Y — номер, без ведущих нулей).
+- **Задание**: файл `taskN.js`, где N — номер задания. В файле обязательно экспортируется `runTask` (синхронная или async-функция).
+  ```js
+  export function runTask() {
+    // ...
+  }
   ```
-
-  Затем поставь Node.js LTS и `serve`:
-
-  ```powershell
-  choco install nodejs-lts -y
-  npm.cmd install --global serve
+- **Описание**: первая строка может содержать `// INFO: ...`. Текст после маркера используется витриной как подпись задания.
+  ```js
+  // INFO: Сортирует массив пузырьком
+  export function runTask() { ... }
   ```
-
-- **Linux / macOS:** поставь Node.js и `serve` любым удобным способом (пример для Debian/Ubuntu):
-
+- **Дополнительно**: файл `tasks.pdf` (опционально) — витрина отрисует ссылку «Открыть задания».
+- **Регенерация**: после любых изменений в `assignments/` выполнить
   ```bash
-  sudo apt update
-  sudo apt install nodejs npm
-  sudo npm install --global serve
+  node showcase/scripts/generate-work-configs.mjs
   ```
 
-### 3. Сгенерируй конфиги работ
-
-```bash
-node showcase/scripts/generate-work-configs.mjs
-```
-
-PowerShell:
-
-```powershell
-node.exe .\showcase\scripts\generate-work-configs.mjs
-```
-
-После добавления новых заданий в `assignments` повторяй генерацию.
-
-### 4. Запусти статический сервер
-
-```bash
-npx serve .
-```
-
-PowerShell:
-
-```powershell
-npx.cmd serve .
-```
-
-Если порт занят, добавь `-l 4000` (или любой другой свободный).
-
-### 5. Открой витрину
-
-Перейди в браузере по адресу `http://localhost:3000/showcase/index.html` (порт может отличаться, если указал другой на предыдущем шаге) и выбери нужную работу.
+Соблюдение этих правил обеспечивает корректное отображение работ и минимизирует ручные действия при обновлениях витрины.

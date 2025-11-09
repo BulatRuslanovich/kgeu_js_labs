@@ -1,4 +1,4 @@
-// Перемещает все нули массива в конец, сохраняя порядок остальных элементов
+// INFO: Перемещает все нули массива в конец, сохраняя порядок остальных элементов
 function moveZerosToEnd(values) {
   const nonZeros = values.filter((value) => value !== 0);
   const zeroCount = values.length - nonZeros.length;

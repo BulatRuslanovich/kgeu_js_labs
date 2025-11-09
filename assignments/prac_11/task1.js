@@ -1,4 +1,4 @@
-// Возвращает вложенную функцию, отдающую строку "Hello World"
+// INFO: Возвращает вложенную функцию, отдающую строку "Hello World"
 function first() {
   function second() {
     return "Hello World";

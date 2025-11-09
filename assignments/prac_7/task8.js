@@ -1,4 +1,4 @@
-// Разбивает число на суммы заданных номиналов жадным алгоритмом
+// INFO: Разбивает число на суммы заданных номиналов жадным алгоритмом
 function greedyDecompose(num, denominations) {
   const res = [];
   let remaining = num;

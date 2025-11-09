@@ -1,4 +1,4 @@
-// Делает первую букву строки заглавной
+// INFO: Делает первую букву строки заглавной
 function capitalizeFirst(str) {
   if (!str) return str;
   return str[0].toUpperCase() + str.slice(1);

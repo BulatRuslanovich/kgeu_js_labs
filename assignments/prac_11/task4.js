@@ -1,4 +1,4 @@
-// Создаёт замыкание для проверки пароля на совпадение
+// INFO: Создаёт замыкание для проверки пароля на совпадение
 function createPass(str1) {
   function guessPass(str2) {
     return str1 === str2;

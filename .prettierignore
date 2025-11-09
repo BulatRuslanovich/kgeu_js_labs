@@ -1,0 +1,6 @@
+# Общие зависимости не форматируем
+node_modules
+# PDF не трогаем; бинарные артефакты
+assignments/**/*.pdf
+# Автогенерированный файл витрины
+showcase/workConfigs.generated.js

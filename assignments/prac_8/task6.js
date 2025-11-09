@@ -1,4 +1,4 @@
-// Считает количество секунд, прошедших с начала текущего дня
+// INFO: Считает количество секунд, прошедших с начала текущего дня
 function secondsSinceStartOfDay(date = new Date()) {
   const startOfDay = new Date(
     date.getFullYear(),

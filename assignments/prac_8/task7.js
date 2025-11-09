@@ -1,4 +1,4 @@
-// Возвращает число секунд до конца текущего дня
+// INFO: Возвращает число секунд до конца текущего дня
 function secondsUntilEndOfDay(date = new Date()) {
   const endOfDay = new Date(
     date.getFullYear(),

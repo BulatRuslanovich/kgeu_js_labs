@@ -1,4 +1,4 @@
-// Проверяет, является ли переданный объект пустым или null/undefined
+// INFO: Проверяет, является ли переданный объект пустым или null/undefined
 function isEmptyObject(obj) {
   if (obj == null) {
     return true;

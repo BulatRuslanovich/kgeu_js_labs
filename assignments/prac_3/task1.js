@@ -1,9 +1,9 @@
-// Демонстрирует особенности поднятия переменных (hoisting) в JavaScript
-function demonstrateVarHoisting() {
+// INFO: Демонстрирует особенности поднятия переменных (hoisting) в JavaScript
+function demonstrateVarHoisting(flag) {
   let x = 0;
 
   function f() {
-    if (1) {
+    if (flag) {
       x = true;
     } else {
       x = false;
@@ -15,5 +15,8 @@ function demonstrateVarHoisting() {
 }
 
 export function runTask() {
-  return [`Результат выполнения функции f(): ${demonstrateVarHoisting()}`];
+  return [
+    `Результат выполнения функции f(true): ${demonstrateVarHoisting(true)}`,
+    `Результат выполнения функции f(false): ${demonstrateVarHoisting(false)}`,
+  ];
 }

@@ -1,4 +1,4 @@
-// Находит трёхзначные числа Армстронга из цифр
+// INFO: Находит трёхзначные числа Армстронга из цифр
 function findThreeDigitArmstrongNumbers() {
   const result = [];
   for (let i = 1; i < 10; i += 1) {

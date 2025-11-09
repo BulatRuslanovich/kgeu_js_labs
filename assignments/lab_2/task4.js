@@ -1,4 +1,4 @@
-// Разворачивает каждое слово в строке по отдельности
+// INFO: Разворачивает каждое слово в строке по отдельности
 function reverseWords(str) {
   const reverse = (word) => word.split("").reverse().join("");
 

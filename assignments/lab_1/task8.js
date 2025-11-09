@@ -1,4 +1,4 @@
-// Перемножает суммы первых n натуральных чисел для диапазона
+// INFO: Перемножает суммы первых n натуральных чисел для диапазона
 function productOfPartialSums(limit = 10) {
   let result = 1;
   for (let i = 2; i <= limit; i += 1) {

@@ -1,4 +1,4 @@
-// Форматирует текущую дату с заданным разделителем
+// INFO: Форматирует текущую дату с заданным разделителем
 function formatDate(separator) {
   const date = new Date();
   const day = date.getDate();

@@ -1,4 +1,4 @@
-// Находит подстроки a?a, где ? — буква из диапазона a-f или A-Z
+// INFO: Находит подстроки a?a, где ? — буква из диапазона a-f или A-Z
 
 const str = "aaa aBa aca aDa afa aZa aga";
 // /a[a-fA-Z]a/g:

@@ -1,4 +1,4 @@
-// Создаёт случайные матрицы и перемножает их
+// INFO: Создаёт случайные матрицы и перемножает их
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }

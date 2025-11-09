@@ -1,4 +1,4 @@
-// Делает первую букву каждого слова заглавной
+// INFO: Делает первую букву каждого слова заглавной
 function capitalizeWords(str) {
   const capitalize = (word) =>
     word ? word[0].toUpperCase() + word.substring(1) : word;

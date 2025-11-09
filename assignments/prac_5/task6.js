@@ -1,4 +1,4 @@
-// Класс параллелепипеда с методами для объёма и площади поверхности
+// INFO: Класс параллелепипеда с методами для объёма и площади поверхности
 class Parallelepiped {
   constructor(width, length, height) {
     this._width = width;

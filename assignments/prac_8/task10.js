@@ -1,4 +1,4 @@
-// Вычисляет разницу между двумя датами в днях (и приблизительно в месяцах)
+// INFO: Вычисляет разницу между двумя датами в днях (и приблизительно в месяцах)
 function daysBetween(date1Str, date2Str) {
   const date1 = new Date(date1Str);
   const date2 = new Date(date2Str);

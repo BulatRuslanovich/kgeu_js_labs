@@ -1,4 +1,4 @@
-// Меняет регистр каждой буквы строки на противоположный
+// INFO: Меняет регистр каждой буквы строки на противоположный
 function invertCase(str) {
   let res = "";
   const isLowercase = (char) => char === char.toLowerCase();

@@ -1,4 +1,4 @@
-// Дополняет число ведущими нулями и необязательным префиксом
+// INFO: Дополняет число ведущими нулями и необязательным префиксом
 function padNumber(num, width, prefix = "") {
   const str = num.toString();
   const zeros = Math.max(0, width - str.length);

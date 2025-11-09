@@ -1,4 +1,4 @@
-// Возвращает объект только с теми ключами, что присутствуют в шаблоне
+// INFO: Возвращает объект только с теми ключами, что присутствуют в шаблоне
 function keepKeys(source, template) {
   const keysToKeep = new Set(Object.keys(template));
   const result = {};

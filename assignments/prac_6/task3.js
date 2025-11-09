@@ -1,4 +1,4 @@
-// Подсчитывает количество заданного символа в строке без учёта регистра
+// INFO: Подсчитывает количество заданного символа в строке без учёта регистра
 function countCharacter(targetChar, str) {
   const low = targetChar.toLowerCase();
   let cnt = 0;

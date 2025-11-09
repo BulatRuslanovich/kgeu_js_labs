@@ -69,46 +69,14 @@ const works = workIds.map((id) => ({
   directory: `assignments/${id}`,
 }));
 
-const extractFirstComment = (content) => {
+const extractInfoLine = (content) => {
   const lines = content.split(/\r?\n/);
-  let inBlock = false;
-  const commentLines = [];
-
-  for (const rawLine of lines) {
-    const line = rawLine.trim();
-    if (!line) continue;
-
-    if (!inBlock && line.startsWith("//")) {
-      return line.replace(/^\/\/+\s?/, "").trim() || "-";
+  for (const line of lines) {
+    const match = line.match(/^\s*\/\/\s*INFO:\s*(.*)$/i);
+    if (match) {
+      return match[1].trim() || "-";
     }
-
-    if (!inBlock && line.startsWith("/*")) {
-      inBlock = true;
-      const stripped = line.replace(/^\/\*+\s?/, "");
-      if (stripped.includes("*/")) {
-        return stripped.replace(/\*\/.*/, "").trim() || "-";
-      }
-      if (stripped) commentLines.push(stripped);
-      continue;
-    }
-
-    if (inBlock) {
-      if (line.includes("*/")) {
-        inBlock = false;
-        commentLines.push(line.replace(/\*\/.*/, ""));
-        break;
-      }
-      commentLines.push(line);
-      continue;
-    }
-
-    break;
   }
-
-  if (commentLines.length > 0) {
-    return commentLines.join(" ").trim() || "-";
-  }
-
   return "-";
 };
 
@@ -140,7 +108,7 @@ for (const work of works) {
     const id = file.replace(/\.js$/i, "");
     const filePath = path.join(workDir, file);
     const content = await fs.readFile(filePath, "utf8");
-    const title = extractFirstComment(content);
+    const title = extractInfoLine(content);
 
     tasks.push({ id, title, file });
   }

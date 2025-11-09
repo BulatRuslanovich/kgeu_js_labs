@@ -1,4 +1,4 @@
-// Возвращает текущие дату и время в виде объекта
+// INFO: Возвращает текущие дату и время в виде объекта
 function getCurrentMoment(date = new Date()) {
   return {
     hour: date.getHours(),

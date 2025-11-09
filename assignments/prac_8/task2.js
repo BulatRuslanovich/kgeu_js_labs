@@ -1,4 +1,4 @@
-// Возвращает количество дней в указанном месяце и году
+// INFO: Возвращает количество дней в указанном месяце и году
 function getDaysInMonth(month, year) {
   return new Date(year, month, 0).getDate();
 }

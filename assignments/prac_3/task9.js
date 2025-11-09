@@ -1,4 +1,4 @@
-// Генерирует все простые числа до указанного предела
+// INFO: Генерирует все простые числа до указанного предела
 function isPrime(number) {
   if (number <= 1) return false;
   if (number <= 3) return true;

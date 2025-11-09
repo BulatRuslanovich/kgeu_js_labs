@@ -1,4 +1,4 @@
-// Проверяет URL вида http(s)://www.domain.{com|ru}
+// INFO: Проверяет URL вида http(s)://www.domain.{com|ru}
 // ^https?:\/\/www\.[a-zA-Z0-9.-]+\.(com|ru)$:
 //   ^             — начало строки: запрещает лишние символы перед URL;
 //   https?        — "http" с необязательной буквой "s" (http или https);

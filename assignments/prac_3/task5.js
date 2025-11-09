@@ -1,4 +1,4 @@
-// Возвращает название дня недели по его номеру
+// INFO: Возвращает название дня недели по его номеру
 function getDayOfWeek(dayNumber) {
   switch (dayNumber) {
     case 1:

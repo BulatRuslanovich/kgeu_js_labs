@@ -1,4 +1,4 @@
-// Добавляет заданное количество недель к дате
+// INFO: Добавляет заданное количество недель к дате
 function addWeeks(date, weeks) {
   const newDate = new Date(date);
   newDate.setDate(newDate.getDate() + weeks * 7);

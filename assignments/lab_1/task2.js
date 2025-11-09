@@ -1,4 +1,4 @@
-// Классическая задача FizzBuzz для чисел до заданного лимита
+// INFO: Классическая задача FizzBuzz для чисел до заданного лимита
 function fizzBuzz(limit = 100) {
   const result = [];
   for (let i = 1; i <= limit; i += 1) {

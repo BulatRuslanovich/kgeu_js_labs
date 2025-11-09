@@ -1,4 +1,4 @@
-// Определяет, является ли переданный год високосным
+// INFO: Определяет, является ли переданный год високосным
 function isLeapYear(year) {
   const date = new Date(year, 1, 29);
   return date.getMonth() === 1;

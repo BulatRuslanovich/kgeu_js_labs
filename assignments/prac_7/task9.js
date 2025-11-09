@@ -1,4 +1,4 @@
-// Разворачивает слова длиной ≥ threshold в предложении
+// INFO: Разворачивает слова длиной ≥ threshold в предложении
 function reverseLongWords(str, threshold = 5) {
   return str
     .split(" ")

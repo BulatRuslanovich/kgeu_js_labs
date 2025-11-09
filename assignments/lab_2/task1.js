@@ -1,4 +1,4 @@
-// Складывает соответствующие элементы двух массивов (с хвостом длинного)
+// INFO: Складывает соответствующие элементы двух массивов (с хвостом длинного)
 function mergeAndSum(arr1, arr2) {
   const master = arr1.length > arr2.length ? arr1 : arr2;
   const slave = arr1.length > arr2.length ? arr2 : arr1;

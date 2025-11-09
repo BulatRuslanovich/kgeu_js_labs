@@ -1,4 +1,4 @@
-// Вставляет дефисы между соседними чётными цифрами в числе
+// INFO: Вставляет дефисы между соседними чётными цифрами в числе
 function insertDashesBetweenEvenDigits(num) {
   let res = "";
   let oldDigit = -1;

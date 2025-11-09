@@ -1,4 +1,4 @@
-// Формирует строку с данными студента по переданным объектам
+// INFO: Формирует строку с данными студента по переданным объектам
 function studentInfoToString(student) {
   return `${student.first_Name} ${student.last_Name} обучается в группе ${student.group}. Год поступления ${student.year}`;
 }

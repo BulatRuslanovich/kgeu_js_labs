@@ -1,4 +1,4 @@
-// Определяет, приходится ли дата на выходной день
+// INFO: Определяет, приходится ли дата на выходной день
 function isWeekend(dateStr) {
   const date = new Date(dateStr);
   const day = date.getDay();

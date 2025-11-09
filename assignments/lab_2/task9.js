@@ -1,4 +1,4 @@
-// Удаляет дубликаты из массива, сохраняя порядок
+// INFO: Удаляет дубликаты из массива, сохраняя порядок
 function uniqueValues(arr) {
   return Array.from(new Set(arr));
 }

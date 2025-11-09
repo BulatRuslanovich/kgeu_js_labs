@@ -1,4 +1,4 @@
-// Проверяет, является ли число числом Армстронга
+// INFO: Проверяет, является ли число числом Армстронга
 function isArmstrongNumber(num) {
   if (num < 0 || !Number.isInteger(num)) return false;
 

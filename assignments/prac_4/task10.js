@@ -1,4 +1,4 @@
-// Удаляет список ключей второго объекта из первого
+// INFO: Удаляет список ключей второго объекта из первого
 function removeKeys(source, keysToRemove) {
   const result = { ...source };
   Object.keys(keysToRemove).forEach((key) => delete result[key]);

@@ -1,4 +1,4 @@
-// Разбивает строку на две половины, дополняя символом '_' при нечётной длине
+// INFO: Разбивает строку на две половины, дополняя символом '_' при нечётной длине
 function splitInHalf(str) {
   const normalized = str.length % 2 === 0 ? str : `${str}_`;
   const middle = normalized.length / 2;

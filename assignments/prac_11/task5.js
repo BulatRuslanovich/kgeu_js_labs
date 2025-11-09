@@ -1,4 +1,4 @@
-// Функциональный калькулятор с числами-замыканиями и операциями
+// INFO: Функциональный калькулятор с числами-замыканиями и операциями
 function numberFunction(value) {
   return function (operation) {
     if (typeof operation === "function") {
@@ -50,5 +50,7 @@ export function runTask() {
     `nine(difference(four())) = ${nine(difference(four()))}`,
     `eight(quotient(two())) = ${eight(quotient(two()))}`,
     `three(sum(five())) = ${three(sum(five()))}`,
+    `zero(sum(nine())) = ${zero(sum(nine()))}`,
+    `one(difference(seven())) = ${one(difference(seven()))}`,
   ];
 }

@@ -1,4 +1,4 @@
-// Возвращает список високосных лет в заданном интервале
+// INFO: Возвращает список високосных лет в заданном интервале
 function listLeapYears(start, end) {
   const res = [];
   for (let year = start; year <= end; year += 1) {

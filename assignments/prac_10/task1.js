@@ -1,4 +1,4 @@
-// Заменяет множественные пробелы в строке одним пробелом
+// INFO: Заменяет множественные пробелы в строке одним пробелом
 const str = "Hello        World            Javascript";
 
 function normalizeWhitespace(input) {

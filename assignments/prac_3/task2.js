@@ -1,4 +1,4 @@
-// Сравнивает язык интерфейса и предлагает переключиться на русский
+// INFO: Сравнивает язык интерфейса и предлагает переключиться на русский
 function chooseLanguage(lang, confirmSwitch) {
   const l = lang === "Русский" ? true : confirmSwitch();
   const l2 = lang === "Русский" || confirmSwitch();

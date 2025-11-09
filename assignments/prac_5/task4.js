@@ -1,4 +1,4 @@
-// Конструктор, который читает два числа и умеет рассчитывать сумму и произведение
+// INFO: Конструктор, который читает два числа и умеет рассчитывать сумму и произведение
 class TwoNumbers {
   constructor(a = 0, b = 0) {
     this.a = a;
@@ -34,8 +34,6 @@ export function runTask() {
       `(${a}, ${b}) -> sum: ${calculator.sum()}, mul: ${calculator.mul()}`,
     );
   });
-
-  results.push("Интерактивная версия доступна в task4.html.");
 
   return results;
 }

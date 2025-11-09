@@ -1,4 +1,4 @@
-// Подсчитывает количество гласных букв в строке
+// INFO: Подсчитывает количество гласных букв в строке
 const vowelRegex = /[aeiou]/gi;
 
 function countVowels(str) {
