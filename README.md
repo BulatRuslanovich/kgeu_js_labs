@@ -10,7 +10,7 @@
 
 - `assignments/` — каталоги лабораторных (`lab_X`) и практик (`prac_Y`), внутри — задания `taskN.js` и опциональный `tasks.pdf`.
 - `showcase/` — SPA на Vue 3 для просмотра кода и запуска решений.
-- `showcase/scripts/generate-work-configs.mjs` — генератор конфигурации витрины.
+- `showcase/scripts/generate-work-configs.mjs` — генератор конфигурации витрины, автоматически обходящий `assignments/`.
 - `showcase/workConfigs.generated.js` — результирующий конфиг (машинная генерация, руками не править).
 - `package.json` — точка входа npm-скриптов, ESLint/Prettier/Vite.
 - `README.md` — рабочая инструкция и требования к задачам.
@@ -51,9 +51,9 @@ npm run format:check
      ```
 3. **Генерация конфигурации**
    ```bash
-   node showcase/scripts/generate-work-configs.mjs
+   npm run generate:configs
    ```
-   > После любого изменения в `assignments/` скрипт нужно запускать повторно.
+   > Команда вызывается автоматически перед `npm run dev` и `npm run build`, но при необходимости конфиг можно собрать вручную.
 4. **Dev-сервер**
    ```bash
    npm run dev
@@ -83,9 +83,8 @@ npm run format:check
   export function runTask() { ... }
   ```
 - **Дополнительно**: файл `tasks.pdf` (опционально) — витрина отрисует ссылку «Открыть задания».
-- **Регенерация**: после любых изменений в `assignments/` выполнить
-  ```bash
-  node showcase/scripts/generate-work-configs.mjs
-  ```
+- **Обновление витрины**:
+  1. Добавьте/измените файлы в `assignments/`.
+  2. Выполните `npm run generate:configs` (или любую команду `npm run dev` / `npm run build`, которая сделает это автоматически).
 
 Соблюдение этих правил обеспечивает корректное отображение работ и минимизирует ручные действия при обновлениях витрины.

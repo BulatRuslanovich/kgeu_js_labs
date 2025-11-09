@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "npm run generate:configs && vite",
+    "build": "npm run generate:configs && vite build",
     "preview": "vite preview",
+    "generate:configs": "node showcase/scripts/generate-work-configs.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
