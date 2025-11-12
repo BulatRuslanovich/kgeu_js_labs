@@ -29,11 +29,7 @@ const workIds = dirEntries
   .map((entry) => entry.name ?? "")
   .sort((a, b) => {
     const typeOrder = (name) =>
-      name.startsWith("lab_")
-        ? 0
-        : name.startsWith("prac_")
-        ? 1
-        : 2;
+      name.startsWith("lab_") ? 0 : name.startsWith("prac_") ? 1 : 2;
     const typeDiff = typeOrder(a) - typeOrder(b);
     if (typeDiff !== 0) return typeDiff;
 

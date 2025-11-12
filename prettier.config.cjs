@@ -19,4 +19,3 @@ module.exports = {
   // Единый перевод строки — LF, чтобы не плодить mix LF/CRLF.
   endOfLine: "lf",
 };
-

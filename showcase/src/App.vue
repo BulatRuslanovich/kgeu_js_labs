@@ -12,7 +12,8 @@ const THEMES = {
 };
 
 function sortWorks(list) {
-  const typeOrder = (id) => (id.startsWith("lab_") ? 0 : id.startsWith("prac_") ? 1 : 2);
+  const typeOrder = (id) =>
+    id.startsWith("lab_") ? 0 : id.startsWith("prac_") ? 1 : 2;
   const getNumber = (id) => Number(id.match(/\d+/)?.[0] ?? 0);
 
   return [...list].sort((a, b) => {
@@ -38,18 +39,23 @@ const workMap = computed(() =>
 const selectedWorkId = ref("");
 const theme = ref(THEMES.DARK);
 
-const selectedWork = computed(() => workMap.value[selectedWorkId.value] ?? null);
+const selectedWork = computed(
+  () => workMap.value[selectedWorkId.value] ?? null,
+);
 const tasks = computed(() => selectedWork.value?.tasks ?? []);
 const hasTasks = computed(() => tasks.value.length > 0);
 
 const isLightTheme = computed(() => theme.value === THEMES.LIGHT);
-const themeButtonLabel = computed(() => (isLightTheme.value ? "Светлая тема" : "Тёмная тема"));
+const themeButtonLabel = computed(() =>
+  isLightTheme.value ? "Светлая тема" : "Тёмная тема",
+);
 const themeButtonDescription = computed(
-  () => `Переключить тему. Сейчас ${isLightTheme.value ? "светлая" : "тёмная"} тема`,
+  () =>
+    `Переключить тему. Сейчас ${isLightTheme.value ? "светлая" : "тёмная"} тема`,
 );
 
-const normalizedDirectory = computed(() =>
-  selectedWork.value?.directory.replace(/^assignments\//, "") ?? "",
+const normalizedDirectory = computed(
+  () => selectedWork.value?.directory.replace(/^assignments\//, "") ?? "",
 );
 
 const tasksPdfLink = computed(() => {
@@ -61,7 +67,9 @@ const tasksPdfLink = computed(() => {
 });
 
 const taskDirectory = computed(() =>
-  selectedWork.value?.directory ? `../../../${selectedWork.value.directory}` : "",
+  selectedWork.value?.directory
+    ? `../../../${selectedWork.value.directory}`
+    : "",
 );
 
 const applyTheme = (value) => {
@@ -101,7 +109,7 @@ onMounted(() => {
   const initialWorkId =
     storedWorkId && workMap.value[storedWorkId]
       ? storedWorkId
-      : works.value[0]?.id ?? "";
+      : (works.value[0]?.id ?? "");
 
   if (initialWorkId) {
     selectedWorkId.value = initialWorkId;
@@ -127,7 +135,9 @@ watch(selectedWorkId, (value) => {
     <div class="header-bar">
       <div class="header-intro">
         <h1>Практики и лабы</h1>
-        <p>Выберите раздел, читайте код и запускайте решения прямо в браузере.</p>
+        <p>
+          Выберите раздел, читайте код и запускайте решения прямо в браузере.
+        </p>
       </div>
       <button
         type="button"
@@ -138,25 +148,24 @@ watch(selectedWorkId, (value) => {
         @click="toggleTheme"
       >
         <span class="theme-toggle__icon" aria-hidden="true" />
-        <span class="theme-toggle__label" data-theme-label>{{ themeButtonLabel }}</span>
+        <span class="theme-toggle__label" data-theme-label>{{
+          themeButtonLabel
+        }}</span>
       </button>
     </div>
 
     <div class="practice-picker" role="group" aria-label="Выбор работы">
       <label for="practice-select">Работа:</label>
       <select id="practice-select" v-model="selectedWorkId">
-        <option
-          v-for="work in works"
-          :key="work.id"
-          :value="work.id"
-        >
+        <option v-for="work in works" :key="work.id" :value="work.id">
           {{ work.title }}
         </option>
       </select>
     </div>
 
     <p class="hint">
-      Подсказка: используйте поиск по странице, чтобы быстрее найти нужную задачу.
+      Подсказка: используйте поиск по странице, чтобы быстрее найти нужную
+      задачу.
     </p>
   </header>
 
@@ -189,4 +198,3 @@ watch(selectedWorkId, (value) => {
     />
   </main>
 </template>
-

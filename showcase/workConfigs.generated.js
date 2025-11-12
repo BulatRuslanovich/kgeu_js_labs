@@ -619,6 +619,49 @@ const workConfigs = {
       },
     ],
   },
+  'prac_12': {
+    id: 'prac_12',
+    title: "Практика 12",
+    directory: "assignments/prac_12",
+    tasksPdf: true,
+    tasks: [
+      {
+        id: 'task1',
+        title: "Преобразование строки в массив и вывод элементов",
+        file: 'task1.js',
+      },
+      {
+        id: 'task2',
+        title: "Преобразование объекта с заменой ключей и значений",
+        file: 'task2.js',
+      },
+      {
+        id: 'task3',
+        title: "Сортировка объекта по значениям и преобразование в JSON",
+        file: 'task3.js',
+      },
+      {
+        id: 'task4',
+        title: "Функция для расчета углов круговой диаграммы",
+        file: 'task4.js',
+      },
+      {
+        id: 'task5',
+        title: "Добавление свойств в пустой объект",
+        file: 'task5.js',
+      },
+      {
+        id: 'task6',
+        title: "Конструктор User с защищенным свойством name",
+        file: 'task6.js',
+      },
+      {
+        id: 'task7',
+        title: "Функция для поиска подстрок с использованием Set",
+        file: 'task7.js',
+      },
+    ],
+  },
 };
 
 export default workConfigs;

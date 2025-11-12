@@ -155,7 +155,9 @@ watch(
   { immediate: true },
 );
 
-const buttonLabel = computed(() => (isRunning.value ? "Выполняем…" : "Запустить"));
+const buttonLabel = computed(() =>
+  isRunning.value ? "Выполняем…" : "Запустить",
+);
 const buttonDisabled = computed(() => !runAvailable.value || isRunning.value);
 </script>
 
@@ -190,12 +192,9 @@ const buttonDisabled = computed(() => !runAvailable.value || isRunning.value);
 
     <div class="result">
       <h3>Результат</h3>
-      <pre
-        class="output"
-        :id="outputId"
-        role="status"
-        aria-live="polite"
-      >{{ output }}</pre>
+      <pre class="output" :id="outputId" role="status" aria-live="polite">{{
+        output
+      }}</pre>
     </div>
   </section>
 </template>
