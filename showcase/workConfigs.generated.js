@@ -141,6 +141,39 @@ const workConfigs = {
       },
     ],
   },
+  'lab_4': {
+    id: 'lab_4',
+    title: "Лаба 4",
+    directory: "assignments/lab_4",
+    tasksPdf: true,
+    tasks: [
+      {
+        id: 'task1',
+        title: "Создает объект-счетчик с методами инкремента и декремента",
+        file: 'task1.js',
+      },
+      {
+        id: 'task2',
+        title: "Создает объекты с только читаемыми свойствами firstName, lastName и fullName",
+        file: 'task2.js',
+      },
+      {
+        id: 'task3',
+        title: "Добавляет аксессор fullName в объекты конструктора ObjConstr",
+        file: 'task3.js',
+      },
+      {
+        id: 'task4',
+        title: "Описывает круг с радиусом и свойством-аксессором площади",
+        file: 'task4.js',
+      },
+      {
+        id: 'task5',
+        title: "Рассчитывает процент инфляции по потребительской корзине за период",
+        file: 'task5.js',
+      },
+    ],
+  },
   'prac_1': {
     id: 'prac_1',
     title: "Практика 1",
@@ -659,6 +692,43 @@ const workConfigs = {
         id: 'task7',
         title: "Функция для поиска подстрок с использованием Set",
         file: 'task7.js',
+      },
+    ],
+  },
+  'prac_13': {
+    id: 'prac_13',
+    title: "Практика 13",
+    directory: "assignments/prac_13",
+    tasks: [
+      {
+        id: 'task1',
+        title: "Добавляет три неизменяемых и неудаляемых свойства в объект",
+        file: 'task1.js',
+      },
+      {
+        id: 'task2',
+        title: "Функция-конструктор User с неизменяемым именем",
+        file: 'task2.js',
+      },
+      {
+        id: 'task3',
+        title: "Предсказание вывода для четырех сценариев с прототипами",
+        file: 'task3.js',
+      },
+      {
+        id: 'task4',
+        title: "Конструктор самолетов с методами взлета и посадки",
+        file: 'task4.js',
+      },
+      {
+        id: 'task5',
+        title: "Реализация Object.create с проверкой прототипа",
+        file: 'task5.js',
+      },
+      {
+        id: 'task6',
+        title: "Переопределение Array.prototype.toString по новым правилам",
+        file: 'task6.js',
       },
     ],
   },
