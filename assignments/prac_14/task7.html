@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+</head>
+<body>
+    <input id="i1" type="text" value="Текст 1">
+    <input id="i2" type="text" value="Текст 2">
+    <button id="swap">Swap</button>
+</body>
+<script>
+    const i1 = document.getElementById("i1");
+    const i2 = document.getElementById("i2");
+
+    document.getElementById("swap").addEventListener("click", () => {
+        const temp = i1.value;
+        i1.value = i2.value;
+        i2.value = temp;
+    });
+</script>
+</html>

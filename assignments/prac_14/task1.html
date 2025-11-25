@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <a href="http://yandex.ru">1st ref</a>
+    <a href="http://mail.ru">2nd ref</a>
+    <a href="http://rambler.ru">3rd ref</a>
+
+    <button id="btn">Press Me</button>
+    
+</body>
+
+<script>
+document.getElementById("btn").addEventListener("click", function addHrefs() {
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+        const href = link.getAttribute("href");
+        link.innerHTML += `(${href})`;
+    });
+
+    this.removeEventListener("click", addHrefs);
+});
+</script>
+
+</html>

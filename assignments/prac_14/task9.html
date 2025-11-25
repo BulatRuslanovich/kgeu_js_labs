@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9</title>
+</head>
+<body>
+    <input id="a" type="text">
+    <input id="b" type="text">
+
+    <span>Результат: <b id="res">?</b></span>
+
+    <button id="sumBtn">Сложить</button>
+
+</body>
+
+<script>
+    document.getElementById("sumBtn").addEventListener("click", () => {
+        const a = +document.getElementById("a").value;
+        const b = +document.getElementById("b").value;
+
+        document.getElementById("res").innerHTML = a + b;
+    });
+</script>
+</html>

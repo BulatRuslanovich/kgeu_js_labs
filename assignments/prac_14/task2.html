@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <h2>Заголовок</h2>
+    <p>Lol</p>
+    <p>kek</p>
+    <p>bobik</p>
+
+    <button id="btn">Press Me</button>
+    
+</body>
+<script>
+document.getElementById("btn").addEventListener("click", function addHrefs() {
+    const p = document.querySelectorAll("p");
+
+    p.forEach((paragraph, index) => {
+        paragraph.innerHTML = ` ${index + 1}`;
+    });
+
+    this.removeEventListener("click", addHrefs);
+});
+</script>
+
+</html>

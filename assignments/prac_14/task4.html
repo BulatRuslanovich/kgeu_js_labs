@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <input type="text" id="fio">
+    <input type="text" id="last">
+    <input type="text" id="first">
+    <input type="text" id="middle">
+
+</body>
+
+<script>
+const fio = document.getElementById("fio");
+const last = document.getElementById("last");
+const first = document.getElementById("first");
+const middle = document.getElementById("middle");
+
+fio.addEventListener("blur", () => {
+    const [l, f, m] = fio.value.split(" ");
+    last.value = l || "";
+    first.value = f || "";
+    middle.value = m || "";
+});
+</script>
+
+
+</html>
